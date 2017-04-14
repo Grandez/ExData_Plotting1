@@ -16,6 +16,7 @@ plot2 <- function(fileName = "household_sample.txt") {
     
     # Plot the data
     with(df, plot(DT, Global_active_power, type = "l", ylab="Global Active Power (kilowatts)", xlab=""))
+    
     dev.copy(png,filename="plot2.png")
     dev.off()
 }

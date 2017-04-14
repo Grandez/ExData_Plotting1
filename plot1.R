@@ -18,6 +18,6 @@ plot1 <- function(fileName = "household_sample.txt") {
     hist(df$Global_active_power, col="red"
                                , main="Global Active Power"
                                , xlab="Global Active Power (kilowatts")
-#    dev.copy(png, filename="plot1.png")
-#    dev.off()
+    dev.copy(png, filename="plot1.png")
+    dev.off()
 }
