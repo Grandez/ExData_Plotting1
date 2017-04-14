@@ -14,7 +14,10 @@ plot4 <- function(fileName = "household_sample.txt") {
     df$DT <- strptime(paste(df$Date, df$Time), format="%d/%m/%Y %H:%M:%S")
     df <- subset(df, DT > ymd("2007-01-31") & DT < ymd("2007-03-01"))
      
-    # Adjust margins
+    # Adjust margins (Saving previous values)
+    oldGrid = par("mfrow")
+    oldMargin=par("mar")
+    
     par(mfrow=c(2,2), mar=c(2,4,2,3))
     
     # Plot the first graph
@@ -39,4 +42,8 @@ plot4 <- function(fileName = "household_sample.txt") {
  
     dev.copy(png, filename="plot4.png", width=480, height=480)
     dev.off()
+    
+    # restore configuration
+    par(mfrow=oldGrid, mar=oldMargin)
+
 }
